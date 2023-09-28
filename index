@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #team1Counter, #team2Counter {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <p>Équipe 1: <span id="team1Counter">0</span></p>
+  <p>Équipe 2: <span id="team2Counter">0</span></p>
+  <button id="addTeam1Point">Ajouter un point à l'équipe 1</button>
+  <button id="addTeam2Point">Ajouter un point à l'équipe 2</button>
+  
+  <script>
+    let team1Points = 0;
+    let team2Points = 0;
+
+    function updateTeam1Counter() {
+      document.getElementById("team1Counter").innerText = team1Points;
+    }
+
+    function updateTeam2Counter() {
+      document.getElementById("team2Counter").innerText = team2Points;
+    }
+
+    // Fonction pour ajouter un point à l'équipe 1
+    function addPointToTeam1() {
+      team1Points++;
+      updateTeam1Counter();
+    }
+
+    // Fonction pour ajouter un point à l'équipe 2
+    function addPointToTeam2() {
+      team2Points++;
+      updateTeam2Counter();
+    }
+
+    // Ajoutez des écouteurs d'événements pour les boutons
+    document.getElementById("addTeam1Point").addEventListener("click", addPointToTeam1);
+    document.getElementById("addTeam2Point").addEventListener("click", addPointToTeam2);
+  </script>
+</body>
+</html>
